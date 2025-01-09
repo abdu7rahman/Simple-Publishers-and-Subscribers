@@ -7,11 +7,9 @@ from std_msgs.msg import String
 class TalkerAndListener(Node):
     def __init__(self):
         super().__init__('talker_and_listener')
-        # Publishers
         self.publisher_chatter = self.create_publisher(String, 'chatter', 10)
         self.publisher_notchatter = self.create_publisher(String, 'notchatter', 10)
 
-        # Subscriber
         self.subscription = self.create_subscription(
             String,
             'chatter',
